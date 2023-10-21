@@ -1,0 +1,12 @@
+dnastring = input("enter your DNA string: ")
+revstr = dnastring[::-1]
+my_dict = {
+    "A":"t",
+    "T":"a",
+    "C":"g",
+    "G":"c"
+}
+for key,value in my_dict.items():
+    revstr = revstr.replace(key,value)
+revcomp = revstr.upper()
+print(revcomp)
