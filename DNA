@@ -1,0 +1,17 @@
+dnacode = input()
+countA = 0
+countC = 0
+countG = 0
+countT = 0
+countelse = 0
+for i in dnacode:
+    if i == 'A':
+        countA += 1
+    if i == 'C':
+        countC += 1
+    if i == 'G':
+        countG += 1
+    if i == 'T':
+        countT +=1
+    else: countelse +=1
+print(countA, countC, countG, countT)
