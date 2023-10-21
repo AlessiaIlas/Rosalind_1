@@ -1,0 +1,3 @@
+dnastring = input("enter your DNA string: ")
+rnastring = dnastring.replace("T","U")
+print(rnastring)
