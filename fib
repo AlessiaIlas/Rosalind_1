@@ -1,0 +1,23 @@
+months = int(input("After how many months is the calculation done: "))
+litter_size = int(input("\nHow many pairs of babies each time: "))
+if months == 1:
+        print(1)
+if months == 2:
+        print(1)
+    
+startnum = 1
+mature = 0
+young = 1
+result = 0
+i= 1
+while i<= months:
+
+        result = mature + young
+
+        next_mature = mature + young
+        next_young = mature * litter_size
+
+        mature = next_mature
+        young = next_young
+        i += 1
+print(result)
