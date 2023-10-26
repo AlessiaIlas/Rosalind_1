@@ -1,0 +1,14 @@
+
+main_string = str(input("Enter the main DNA string: "))
+string_to_find = str(input("\n Enter the substring to be found: "))
+lenght_sta = len(string_to_find)
+lenght_ms = len(main_string)
+print("\n The lenght of the string to analyze is " + str(lenght_sta))
+print("\n The lenght of the main string is " + str(lenght_ms))
+m_str = [x for x in main_string]
+str_tf = [x for x in string_to_find]
+lenght_of_range = lenght_ms-lenght_sta+1
+for i in range(0,lenght_of_range):
+    if m_str[i] == str_tf[0]:
+        if m_str[i:i+lenght_sta] == str_tf:
+            print(i+1)
