@@ -1,0 +1,25 @@
+
+f = open(#INSERT FILE PATH ,"r")
+emptlst = []
+content = f.read()
+ls = content.split('>')
+while("" in ls):
+    ls.remove("")
+str_lst = []
+for sub in ls:
+    str_lst.append(sub.replace("\n",""))
+ls_names = []
+ls_strings = []
+for x in str_lst:
+    totake = x[13:]
+    lentotake = len(totake)
+    gc_cont = totake.count('G')+totake.count('C')
+    perc = (gc_cont/lentotake)*100
+    ls_strings.append(perc)
+    
+for i in str_lst:
+    ls_names.append(i[0:13])
+
+dict1 = {ls_names[i]: ls_strings[i] for i in range(len(ls_names))}
+max_GC = max(dict1, key = dict1.get)
+print(max_GC)
