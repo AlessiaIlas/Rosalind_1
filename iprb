@@ -1,0 +1,37 @@
+
+k=int(input("\Enter heterozygous dominant number: ")
+m= int(input("\Enter homozygous number: ")
+n= int(input("\Enter heterozygous recessive number: ")
+
+tot= k+m+n
+prob_k = k/tot
+prob_m = m/tot
+prob_n = n/tot
+tot_comb = 6
+
+prob_K_M = (prob_k+prob_m)
+prob_K_N = (prob_k + prob_n)
+prob_M_N = (prob_m + prob_n)
+prob_K_K = (prob_k+prob_k)
+prob_N_N = (prob_n+prob_n)
+prob_M_M = (prob_m+prob_m)
+
+
+tot_prob = prob_K_M+prob_K_N+ prob_M_N+prob_K_K+prob_N_N+prob_M_M
+prob_K_M = prob_K_M/tot_prob
+prob_K_N = prob_K_N/tot_prob
+prob_M_N =  prob_M_N/tot_prob
+prob_K_K = prob_K_K/tot_prob
+prob_N_N = prob_N_N/tot_prob
+prob_M_M = prob_M_M/tot_prob
+
+
+
+
+
+MN_negative = prob_M_N/2  #the chance of obtaining a recessive from M_N
+MM_negative = (25/100)*prob_M_M  #the chance of obtaining a recessive prom M_M
+#all N_N results are recessive. We therefore sum all these "negative" possibilities:
+tot_recessive_chances = MN_negative+MM_negative+prob_N_N
+dominant = 1-tot_recessive_chances
+print(dominant)
