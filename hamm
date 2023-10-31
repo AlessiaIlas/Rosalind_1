@@ -1,0 +1,7 @@
+s = str(input("Enter first string: "))
+t = str(input("\n Enter the second string: "))
+tot_hamm = 0
+for i in range(len(s)):
+    if s[i] != t[i]:
+        tot_hamm += 1
+print(tot_hamm)
