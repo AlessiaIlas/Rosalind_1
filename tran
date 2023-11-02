@@ -1,0 +1,22 @@
+purines = ['A','G']
+pyrimidines = ['C','T']
+first_DNA_string = str(input("Enter the first DNA string: "))
+second_DNA_string = str(input("\n Enter the second DNA string: "))
+final = 0
+transitions = 0
+transversions = 0
+for i in range(0,len(first_DNA_string)):
+    if first_DNA_string[i] != second_DNA_string[i]:
+        if first_DNA_string[i] in purines and second_DNA_string[i] in purines:
+            transitions += 1
+        if first_DNA_string[i] in pyrimidines and second_DNA_string[i] in pyrimidines:
+            transitions += 1
+        if first_DNA_string[i] in purines and second_DNA_string[i] in pyrimidines:
+            transversions += 1
+        if first_DNA_string[i] in pyrimidines and second_DNA_string[i] in purines:
+            transversions += 1
+    print(first_DNA_string[i])
+print("\n Total number of transitions : " + str(transitions))
+print("\n Total number of transversions : " + str(transversions))
+ratio = transitions/transversions
+print("\n The ratio is : " + str(ratio))
