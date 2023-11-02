@@ -1,0 +1,54 @@
+f = open(#ENTER FILE PATH,"r")
+emptlst = []
+content = f.read()
+ls = content.split('>')
+while("" in ls):
+    ls.remove("")
+str_lst = []
+for sub in ls:
+    str_lst.append(sub.replace("\n",""))
+ls_strings = []
+for x in str_lst:
+    totake = x[10:]
+    lentotake = len(totake)
+    ls_strings.append(totake)
+#print(ls_strings)
+lenstr = len(ls_strings[1])
+A = [0]*lenstr
+C = [0]*lenstr
+T = [0]*lenstr
+G = [0]*lenstr
+i = 0
+emptfin = ''
+for i in ls_strings:
+    for l in range(0, lenstr):
+        if i[l] == "A":
+            A[l] +=1
+        if i[l] == "C":
+            C[l] += 1
+        if i[l] == "T":
+            T[l] += 1
+        if i[l] == "G":
+            G[l] += 1
+
+mmatrix = [A,C,T,G]
+finlst = []
+for b in range(0,lenstr):
+    totmmm =[ item[b] for item in mmatrix]
+    finlst += [totmmm]
+print(finlst)
+# A becomes the 1st element of each list
+# C becomes the 2nd 
+# T becomes the 3rd 
+# G becomes the 4th 
+for nucleotide in finlst:
+    if max(nucleotide) == nucleotide[0]:
+        emptfin += 'A'
+    if max(nucleotide) == nucleotide[1]:
+        emptfin += 'C'
+    if max(nucleotide) == nucleotide[2]:
+        emptfin += 'T'
+    if max(nucleotide) == nucleotide[3]:
+        emptfin += 'G'
+
+print(emptfin)
