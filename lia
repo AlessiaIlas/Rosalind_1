@@ -1,0 +1,11 @@
+import math                                                                    
+k = int(input("Enter the number of generations: "))                                                                       
+N = int(input("\n Enter the number of organisms that need to be AaBb: "))                                                                         
+litter_size = 2**k                                                                       
+probability = 0                                                                
+for i in range(N, litter_size + 1):   
+    #Bernoulli trials                                                   
+    calculation = (math.factorial(litter_size) /                                                
+            (math.factorial(i) * math.factorial(litter_size - i))) * (0.25**i) * (0.75**(litter_size - i))                                                        
+    probability += calculation                                                        
+print(probability)  
